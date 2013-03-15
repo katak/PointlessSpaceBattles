@@ -1,0 +1,14 @@
+<TextureAtlas imagePath='atlas@2x.png'>
+  <SubTexture name='walk_00' x='0' y='0' height='301.0' width='174.0'/>
+  <SubTexture name='walk_01' x='0' y='302' height='301.0' width='174.0'/>
+  <SubTexture name='walk_02' x='0' y='604' height='301.0' width='174.0'/>
+  <SubTexture name='walk_03' x='175' y='0' height='301.0' width='174.0'/>
+  <SubTexture name='walk_04' x='350' y='0' height='301.0' width='174.0'/>
+  <SubTexture name='walk_05' x='525' y='0' height='301.0' width='174.0'/>
+  <SubTexture name='walk_06' x='700' y='0' height='301.0' width='174.0'/>
+  <SubTexture name='walk_07' x='175' y='302' height='301.0' width='174.0'/>
+  <SubTexture name='walk_08' x='175' y='604' height='301.0' width='174.0'/>
+  <SubTexture name='walk_09' x='350' y='302' height='301.0' width='174.0'/>
+  <SubTexture name='walk_10' x='350' y='604' height='301.0' width='174.0'/>
+  <SubTexture name='walk_11' x='525' y='302' height='301.0' width='174.0'/>
+</TextureAtlas>
