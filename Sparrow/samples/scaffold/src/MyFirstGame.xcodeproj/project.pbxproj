@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
 		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
-		01F2190516F175E600A9088E /* drugs.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190116F175E600A9088E /* drugs.pex */; };
-		01F2190616F175E600A9088E /* fire.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190216F175E600A9088E /* fire.pex */; };
-		01F2190716F175E600A9088E /* sun.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190316F175E600A9088E /* sun.pex */; };
-		01F2190816F175E600A9088E /* waterfall.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190416F175E600A9088E /* waterfall.pex */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		DE053A2716F3B7C00034F0E9 /* drugs.pex in Resources */ = {isa = PBXBuildFile; fileRef = DE053A2316F3B7C00034F0E9 /* drugs.pex */; };
+		DE053A2816F3B7C00034F0E9 /* fire.pex in Resources */ = {isa = PBXBuildFile; fileRef = DE053A2416F3B7C00034F0E9 /* fire.pex */; };
+		DE053A2916F3B7C00034F0E9 /* sun.pex in Resources */ = {isa = PBXBuildFile; fileRef = DE053A2516F3B7C00034F0E9 /* sun.pex */; };
+		DE053A2A16F3B7C00034F0E9 /* waterfall.pex in Resources */ = {isa = PBXBuildFile; fileRef = DE053A2616F3B7C00034F0E9 /* waterfall.pex */; };
+		DE053A2B16F3B9BC0034F0E9 /* SXNSDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE053A1F16F3B6CB0034F0E9 /* SXNSDataExtensions.m */; };
+		DE053A2C16F3B9BC0034F0E9 /* SXParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE053A2116F3B6CB0034F0E9 /* SXParticleSystem.m */; };
 		DE0C71011624177000357F6E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0C71001624177000357F6E /* Default.png */; };
 		DE0C71031624177500357F6E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0C71021624177500357F6E /* Default@2x.png */; };
 		DE0C71051624177800357F6E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0C71041624177800357F6E /* Default-568h@2x.png */; };
@@ -77,10 +79,6 @@
 		01137E3A16F2BB1300FA320B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
 		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
 		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
-		01F2190116F175E600A9088E /* drugs.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = drugs.pex; sourceTree = "<group>"; };
-		01F2190216F175E600A9088E /* fire.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fire.pex; sourceTree = "<group>"; };
-		01F2190316F175E600A9088E /* sun.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sun.pex; sourceTree = "<group>"; };
-		01F2190416F175E600A9088E /* waterfall.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = waterfall.pex; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +88,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DE053A1E16F3B6CB0034F0E9 /* SXNSDataExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNSDataExtensions.h; sourceTree = "<group>"; };
+		DE053A1F16F3B6CB0034F0E9 /* SXNSDataExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNSDataExtensions.m; sourceTree = "<group>"; };
+		DE053A2016F3B6CB0034F0E9 /* SXParticleSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParticleSystem.h; sourceTree = "<group>"; };
+		DE053A2116F3B6CB0034F0E9 /* SXParticleSystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParticleSystem.m; sourceTree = "<group>"; };
+		DE053A2316F3B7C00034F0E9 /* drugs.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = drugs.pex; sourceTree = "<group>"; };
+		DE053A2416F3B7C00034F0E9 /* fire.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fire.pex; sourceTree = "<group>"; };
+		DE053A2516F3B7C00034F0E9 /* sun.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sun.pex; sourceTree = "<group>"; };
+		DE053A2616F3B7C00034F0E9 /* waterfall.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = waterfall.pex; sourceTree = "<group>"; };
 		DE0C71001624177000357F6E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DE0C71021624177500357F6E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DE0C71041624177800357F6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -148,22 +154,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01F2190016F175E600A9088E /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				01F2190116F175E600A9088E /* drugs.pex */,
-				01F2190216F175E600A9088E /* fire.pex */,
-				01F2190316F175E600A9088E /* sun.pex */,
-				01F2190416F175E600A9088E /* waterfall.pex */,
-			);
-			name = Configs;
-			path = "../../../../../../Downloads/PrimaryFeather-Sparrow-Extension-Particle-System-7894715/demo/Configs";
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				01F2190016F175E600A9088E /* Configs */,
 				DECF454314F2E45A006A4287 /* Support */,
 				DE4F80D714E153EA00655D44 /* Game */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
@@ -185,6 +178,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DE053A2216F3B7C00034F0E9 /* Configs */,
 				DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -231,6 +225,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE053A2216F3B7C00034F0E9 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				DE053A2316F3B7C00034F0E9 /* drugs.pex */,
+				DE053A2416F3B7C00034F0E9 /* fire.pex */,
+				DE053A2516F3B7C00034F0E9 /* sun.pex */,
+				DE053A2616F3B7C00034F0E9 /* waterfall.pex */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		DE0C71121624180300357F6E /* system */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +264,10 @@
 		DE4F80D714E153EA00655D44 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DE053A1E16F3B6CB0034F0E9 /* SXNSDataExtensions.h */,
+				DE053A1F16F3B6CB0034F0E9 /* SXNSDataExtensions.m */,
+				DE053A2016F3B6CB0034F0E9 /* SXParticleSystem.h */,
+				DE053A2116F3B6CB0034F0E9 /* SXParticleSystem.m */,
 				DE88294F14ECF11F00773036 /* GameController.h */,
 				DE88295014ECF11F00773036 /* GameController.m */,
 				DE4A3DE310FFB2AF00FDA492 /* Game.h */,
@@ -414,11 +423,11 @@
 				DE0C710D162417AC00357F6E /* Icon~ipad.png in Resources */,
 				DE0C710F162417B400357F6E /* Icon@2x.png in Resources */,
 				DE0C7111162417B800357F6E /* Icon@2x~ipad.png in Resources */,
-				01F2190516F175E600A9088E /* drugs.pex in Resources */,
-				01F2190616F175E600A9088E /* fire.pex in Resources */,
-				01F2190716F175E600A9088E /* sun.pex in Resources */,
-				01F2190816F175E600A9088E /* waterfall.pex in Resources */,
 				016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */,
+				DE053A2716F3B7C00034F0E9 /* drugs.pex in Resources */,
+				DE053A2816F3B7C00034F0E9 /* fire.pex in Resources */,
+				DE053A2916F3B7C00034F0E9 /* sun.pex in Resources */,
+				DE053A2A16F3B7C00034F0E9 /* waterfall.pex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +438,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE053A2B16F3B9BC0034F0E9 /* SXNSDataExtensions.m in Sources */,
+				DE053A2C16F3B9BC0034F0E9 /* SXParticleSystem.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				DE4A3DE510FFB2AF00FDA492 /* Game.m in Sources */,

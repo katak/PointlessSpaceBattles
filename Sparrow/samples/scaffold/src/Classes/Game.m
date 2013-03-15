@@ -61,6 +61,22 @@ SPTextField *textField;
             [rawAccel addObject:[NSNumber numberWithFloat:0.0]];
         }
         
+        mParticleSystem = [[SXParticleSystem alloc] initWithContentsOfFile:@"waterfall.pex"];
+        mParticleSystem.x = width / 2.0f;
+        mParticleSystem.y = height / 2.0f;
+        
+        [self addChild:mParticleSystem];
+//        [self.stage.juggler addObject:mParticleSystem];
+        [[SPStage mainStage].juggler addObject:mParticleSystem];
+        
+//        mParticleSystem.emitterX = 20.0f;
+//        mParticleSystem.emitterY = -40.0f;
+//        mParticleSystem.scaleY = -1;
+        
+        [mParticleSystem start];
+         
+         
+        
         [self setup];
     }
     return self;
@@ -100,7 +116,7 @@ SPTextField *textField;
     background.pivotY = background.height / 2;
     background.x = mGameWidth / 2;
     background.y = mGameHeight / 2;
-    [self addChild:background];
+//    [self addChild:background];
     
     
     // Display the Sparrow egg
@@ -110,24 +126,24 @@ SPTextField *textField;
     playerShip.pivotY = (int)playerShip.height / 2;
     playerShip.x = mGameWidth / 2;
     playerShip.y = mGameHeight / 2;
-    [self addChild:playerShip];
+//    [self addChild:playerShip];
     
-    SPImage *image = [[SPImage alloc] initWithTexture:[Media atlasTexture:@"sparrow"]];
-    image.pivotX = (int)image.width / 2;
-    image.pivotY = (int)image.height / 2;
-    image.x = mGameWidth / 2;
-    image.y = mGameHeight / 2 + 40;
+//    SPImage *image = [[SPImage alloc] initWithTexture:[Media atlasTexture:@"sparrow"]];
+//    image.pivotX = (int)image.width / 2;
+//    image.pivotY = (int)image.height / 2;
+//    image.x = mGameWidth / 2;
+//    image.y = mGameHeight / 2 + 40;
 //    [self addChild:image];
     
     // play a sound when the image is touched
-    [image addEventListener:@selector(onImageTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+//    [image addEventListener:@selector(onImageTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
     // and animate it a little
-    SPTween *tween = [SPTween tweenWithTarget:image time:1.5 transition:SP_TRANSITION_EASE_IN_OUT];
-    [tween animateProperty:@"y" targetValue:image.y + 30];
-    [tween animateProperty:@"rotation" targetValue:0.1];
-    tween.loop = SPLoopTypeReverse;
-    [[SPStage mainStage].juggler addObject:tween];
+//    SPTween *tween = [SPTween tweenWithTarget:image time:1.5 transition:SP_TRANSITION_EASE_IN_OUT];
+//    [tween animateProperty:@"y" targetValue:image.y + 30];
+//    [tween animateProperty:@"rotation" targetValue:0.1];
+//    tween.loop = SPLoopTypeReverse;
+//    [[SPStage mainStage].juggler addObject:tween];
     
     
     // Create a text field
@@ -137,6 +153,7 @@ SPTextField *textField;
     textField = [[SPTextField alloc] initWithWidth:280 height:80 text:text];
     textField.x = 50;    // (mGameWidth - textField.width) / 2;
     textField.y = 50;   // image.y - 175;
+    textField.color = 0xFFFFFF;
     [self addChild:textField];
     
 
