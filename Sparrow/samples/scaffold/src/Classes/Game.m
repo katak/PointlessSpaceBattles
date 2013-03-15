@@ -72,6 +72,9 @@ SPTextField *textField;
 //        mParticleSystem.emitterX = 20.0f;
 //        mParticleSystem.emitterY = -40.0f;
 //        mParticleSystem.scaleY = -1;
+//        mParticleSystem.scaleFactor = 2.0;    // more native for retina?
+        
+//        blog.onebyonedesign.com/flash/particle-editor-for-starling-framework/
         
         [mParticleSystem start];
          
