@@ -22,6 +22,8 @@
 
 @synthesize gameWidth  = mGameWidth;
 @synthesize gameHeight = mGameHeight;
+int frameCount = 0;
+SPTextField *textField;
 
 - (id)initWithWidth:(float)width height:(float)height
 {
@@ -94,13 +96,12 @@
     
     // Create a text field
     
-    NSString *text = @"To find out how to create your own game out of this scaffold, " \
-                     @"have a look at the 'First Steps' section of the Sparrow website!";
+    NSString *text = @"Frame: ";
     
-    SPTextField *textField = [[SPTextField alloc] initWithWidth:280 height:80 text:text];
-    textField.x = (mGameWidth - textField.width) / 2;
-    textField.y = image.y - 175;
-//    [self addChild:textField];
+    textField = [[SPTextField alloc] initWithWidth:280 height:80 text:text];
+    textField.x = 50;    // (mGameWidth - textField.width) / 2;
+    textField.y = 50;   // image.y - 175;
+    [self addChild:textField];
     
 
     // The scaffold autorotates the game to all supported device orientations. 
@@ -113,17 +114,6 @@
     
     [self addEventListener:@selector(onResize:) atObject:self forType:SP_EVENT_TYPE_RESIZE];
     
-    
-    // We release the objects, because we don't keep any reference to them.
-    // (Their parent display objects will take care of them.)
-    // 
-    // However, if you don't want to bother with memory management, feel free to convert this
-    // project to ARC (Automatic Reference Counting) by clicking on 
-    // "Edit - Refactor - Convert to Objective-C ARC".
-    // Those lines will then be removed from the project.
-    
-    
-    
     // Per default, this project compiles as a universal application. To change that, enter the 
     // project info screen, and in the "Build"-tab, find the setting "Targeted device family".
     //
@@ -131,8 +121,11 @@
     //   * iPhone      -> iPhone only App
     //   * iPad        -> iPad only App
     //   * iPhone/iPad -> Universal App  
-    // 
+    //
     // To support the iPad, the minimum "iOS deployment target" is "iOS 3.2".
+    
+    [self addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    [self addEventListener:@selector(onScreenTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
 }
 
 - (void)onImageTouched:(SPTouchEvent *)event
@@ -150,4 +143,15 @@
           event.isPortrait ? @"portrait" : @"landscape");
 }
 
+- (void)onEnterFrame:(SPEnterFrameEvent *)event
+{
+    frameCount++;
+    textField.text = [NSString stringWithFormat:@"Frame: %d",frameCount];
+    
+}
+
+- (void)onScreenTouched:(SPTouchEvent *)event
+{
+    frameCount = 0;
+}
 @end

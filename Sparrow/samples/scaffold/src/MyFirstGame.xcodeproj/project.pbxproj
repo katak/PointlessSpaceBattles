@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
 		01F2190516F175E600A9088E /* drugs.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190116F175E600A9088E /* drugs.pex */; };
 		01F2190616F175E600A9088E /* fire.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190216F175E600A9088E /* fire.pex */; };
 		01F2190716F175E600A9088E /* sun.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190316F175E600A9088E /* sun.pex */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01137E3A16F2BB1300FA320B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
 		01F2190116F175E600A9088E /* drugs.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = drugs.pex; sourceTree = "<group>"; };
 		01F2190216F175E600A9088E /* fire.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fire.pex; sourceTree = "<group>"; };
 		01F2190316F175E600A9088E /* sun.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sun.pex; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				DE4A3DE410FFB2AF00FDA492 /* Game.m */,
 				DE4F80D414E153E600655D44 /* Media.h */,
 				DE4F80D514E153E600655D44 /* Media.m */,
+				01137E3A16F2BB1300FA320B /* Ship.h */,
+				01137E3B16F2BB1300FA320B /* Ship.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				DE88295114ECF12000773036 /* GameController.m in Sources */,
 				DECF454814F2E527006A4287 /* SPOverlayView.m in Sources */,
 				DE1FBDFD14F831A300E86642 /* SPResizeEvent.m in Sources */,
+				01137E3C16F2BB1300FA320B /* Ship.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
