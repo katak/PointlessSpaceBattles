@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
+		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
 		01F2190516F175E600A9088E /* drugs.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190116F175E600A9088E /* drugs.pex */; };
 		01F2190616F175E600A9088E /* fire.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190216F175E600A9088E /* fire.pex */; };
 		01F2190716F175E600A9088E /* sun.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01F2190316F175E600A9088E /* sun.pex */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		01137E3A16F2BB1300FA320B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
 		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
+		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
 		01F2190116F175E600A9088E /* drugs.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = drugs.pex; sourceTree = "<group>"; };
 		01F2190216F175E600A9088E /* fire.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fire.pex; sourceTree = "<group>"; };
 		01F2190316F175E600A9088E /* sun.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sun.pex; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		DE4F80DD14E1541400655D44 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				016BF1FE16F2EB6100C1D38E /* ship.jpeg */,
 				DE4F80DE14E1541400655D44 /* atlas.png */,
 				DE4F80DF14E1541400655D44 /* atlas.xml */,
 				DE115960162320F100A25086 /* background.jpg */,
@@ -415,6 +418,7 @@
 				01F2190616F175E600A9088E /* fire.pex in Resources */,
 				01F2190716F175E600A9088E /* sun.pex in Resources */,
 				01F2190816F175E600A9088E /* waterfall.pex in Resources */,
+				016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

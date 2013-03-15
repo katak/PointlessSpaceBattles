@@ -13,6 +13,9 @@
 - (void)onImageTouched:(SPTouchEvent *)event;
 - (void)onResize:(SPResizeEvent *)event;
 
+@property (nonatomic) float accel;
+#define ACCEL_FACTOR 20000  // this value can vary depending on the application
+#define NUM_FILTER_POINTS 10    // number of recent points to use in average
 @end
 
 
@@ -22,6 +25,19 @@
 
 @synthesize gameWidth  = mGameWidth;
 @synthesize gameHeight = mGameHeight;
+@synthesize accel;  // accelerometer acceleration value
+
+UIAccelerometer *accelerometer;
+NSMutableArray *rawAccel;
+
+SPImage *playerShip;
+
+float objXSpeed;
+float objYSpeed;
+float dt;                       // time elapsed
+
+BOOL atLeftEdgeOfScreen = NO;   // flag for player collision with left screen edge
+BOOL atRightEdgeOfScreen = NO;  // flag for player collision with right screen edge
 int frameCount = 0;
 SPTextField *textField;
 
@@ -31,6 +47,19 @@ SPTextField *textField;
     {
         mGameWidth = width;
         mGameHeight = height;
+        
+        objXSpeed = 1.0;
+        objYSpeed = 1.0;
+        
+        accelerometer = [UIAccelerometer sharedAccelerometer];
+        accelerometer.updateInterval = 1.0/60.0;
+        accelerometer.delegate = self;
+        
+        rawAccel = [NSMutableArray arrayWithCapacity:NUM_FILTER_POINTS];
+        for (int i = 0; i < NUM_FILTER_POINTS; i++)
+        {
+            [rawAccel addObject:[NSNumber numberWithFloat:0.0]];
+        }
         
         [self setup];
     }
@@ -75,6 +104,13 @@ SPTextField *textField;
     
     
     // Display the Sparrow egg
+    
+    playerShip = [[SPImage alloc] initWithContentsOfFile:@"ship.jpeg"];
+    playerShip.pivotX = (int)playerShip.width / 2;
+    playerShip.pivotY = (int)playerShip.height / 2;
+    playerShip.x = mGameWidth / 2;
+    playerShip.y = mGameHeight / 2;
+    [self addChild:playerShip];
     
     SPImage *image = [[SPImage alloc] initWithTexture:[Media atlasTexture:@"sparrow"]];
     image.pivotX = (int)image.width / 2;
@@ -147,11 +183,71 @@ SPTextField *textField;
 {
     frameCount++;
     textField.text = [NSString stringWithFormat:@"Frame: %d",frameCount];
-    
+    dt = event.passedTime;
 }
 
 - (void)onScreenTouched:(SPTouchEvent *)event
 {
     frameCount = 0;
+}
+
+// accelerometer handler
+// implement a low-pass filter to extract stable acceleration value
+- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *) acceleration
+{
+    BOOL shouldMove = NO;
+    
+    if((!atLeftEdgeOfScreen) || (!atRightEdgeOfScreen)){
+        if(acceleration.x < -0.05){
+            shouldMove = YES;
+        }else if(acceleration.x > 0.05){
+            shouldMove = YES;
+        }
+    }if(atLeftEdgeOfScreen){
+        if(acceleration.x < 0){
+            shouldMove = NO;
+        }if(acceleration.x > 0){
+            atLeftEdgeOfScreen = NO;
+            shouldMove = YES;
+        }
+    }if(atRightEdgeOfScreen){
+        if(acceleration.x > 0){
+            shouldMove = NO;
+        }if(acceleration.x < 0){
+            atRightEdgeOfScreen = NO;
+            shouldMove = YES;
+        }
+    }
+    
+    if(shouldMove){
+        // player ship bounds checking
+        if(playerShip.x < 40){
+            playerShip.x = 40;
+            atLeftEdgeOfScreen = YES;
+        }else if(playerShip.x > (mGameWidth-40)){
+            playerShip.x = mGameWidth-40;
+            atRightEdgeOfScreen = YES;
+        }else{
+            if(dt != 0){
+                playerShip.x += objXSpeed * accel * dt * dt;
+            }
+        }
+    }
+    
+    // insert newest value
+    // will push current values over by 1 spot, extending length by 1
+    
+    [rawAccel insertObject:[NSNumber numberWithFloat: acceleration.x] atIndex:0];
+    
+    // remove oldest value, returning length to NUM_FILTER_POINTS
+    [rawAccel removeObjectAtIndex:NUM_FILTER_POINTS];
+    
+    // perform averaging
+    accel = 0.0;
+    for (NSNumber *raw in rawAccel)
+    {
+        accel += [raw floatValue];
+    }
+    accel *= ACCEL_FACTOR / NUM_FILTER_POINTS;
 }
 @end
