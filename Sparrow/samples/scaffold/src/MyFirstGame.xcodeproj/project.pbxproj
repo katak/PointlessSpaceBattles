@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
+		0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */ = {isa = PBXBuildFile; fileRef = 0119E23B16F3FFF80045B3BF /* rocketthrust.pex */; };
 		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		01137E3A16F2BB1300FA320B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
 		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
+		0119E23B16F3FFF80045B3BF /* rocketthrust.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rocketthrust.pex; sourceTree = "<group>"; };
 		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		DE053A2216F3B7C00034F0E9 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				0119E23B16F3FFF80045B3BF /* rocketthrust.pex */,
 				DE053A2316F3B7C00034F0E9 /* drugs.pex */,
 				DE053A2416F3B7C00034F0E9 /* fire.pex */,
 				DE053A2516F3B7C00034F0E9 /* sun.pex */,
@@ -428,6 +431,7 @@
 				DE053A2816F3B7C00034F0E9 /* fire.pex in Resources */,
 				DE053A2916F3B7C00034F0E9 /* sun.pex in Resources */,
 				DE053A2A16F3B7C00034F0E9 /* waterfall.pex in Resources */,
+				0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

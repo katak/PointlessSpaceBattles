@@ -61,25 +61,20 @@ SPTextField *textField;
             [rawAccel addObject:[NSNumber numberWithFloat:0.0]];
         }
         
-        mParticleSystem = [[SXParticleSystem alloc] initWithContentsOfFile:@"waterfall.pex"];
-        mParticleSystem.x = width / 2.0f;
-        mParticleSystem.y = height / 2.0f;
+        mParticleSystem = [[SXParticleSystem alloc] initWithContentsOfFile:@"rocketthrust.pex"];
         
-        [self addChild:mParticleSystem];
-//        [self.stage.juggler addObject:mParticleSystem];
+        mParticleSystem.emitterX = width / 2.0f;
+        mParticleSystem.emitterY = height / 2.0f;
+        
         [[SPStage mainStage].juggler addObject:mParticleSystem];
         
-//        mParticleSystem.emitterX = 20.0f;
-//        mParticleSystem.emitterY = -40.0f;
-//        mParticleSystem.scaleY = -1;
+        mParticleSystem.scaleY = -1;
 //        mParticleSystem.scaleFactor = 2.0;    // more native for retina?
         
 //        blog.onebyonedesign.com/flash/particle-editor-for-starling-framework/
         
         [mParticleSystem start];
          
-         
-        
         [self setup];
     }
     return self;
@@ -107,39 +102,34 @@ SPTextField *textField;
     // that way, you will be able to access your textures and sounds throughout your 
     // application, without duplicating any resources.
     
-    [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
+//    [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
     [Media initSound];      // loads all your sounds    -> see Media.h/Media.m
     
     
     // Create a background image. Since the demo must support all different kinds of orientations,
     // we center it on the stage with the pivot point.
     
-    SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background.jpg"];
-    background.pivotX = background.width / 2;
-    background.pivotY = background.height / 2;
-    background.x = mGameWidth / 2;
-    background.y = mGameHeight / 2;
+//    SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background.jpg"];
+//    background.pivotX = background.width / 2;
+//    background.pivotY = background.height / 2;
+//    background.x = mGameWidth / 2;
+//    background.y = mGameHeight / 2;
 //    [self addChild:background];
     
-    
-    // Display the Sparrow egg
-    
+    SPQuad *background = [[SPQuad alloc] initWithWidth:mGameWidth height:mGameHeight];
+    [background setColor:0x000000];
+    [self addChild:background];
+    [self addChild:mParticleSystem];
+        
     playerShip = [[SPImage alloc] initWithContentsOfFile:@"ship.jpeg"];
     playerShip.pivotX = (int)playerShip.width / 2;
     playerShip.pivotY = (int)playerShip.height / 2;
     playerShip.x = mGameWidth / 2;
     playerShip.y = mGameHeight / 2;
-//    [self addChild:playerShip];
+    [self addChild:playerShip];
     
-//    SPImage *image = [[SPImage alloc] initWithTexture:[Media atlasTexture:@"sparrow"]];
-//    image.pivotX = (int)image.width / 2;
-//    image.pivotY = (int)image.height / 2;
-//    image.x = mGameWidth / 2;
-//    image.y = mGameHeight / 2 + 40;
-//    [self addChild:image];
-    
-    // play a sound when the image is touched
-//    [image addEventListener:@selector(onImageTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+//    mParticleSystem.emitterX = mGameWidth / 2.0f; // playerShip.pivotX; // mGameWidth / 2.0f;
+//    mParticleSystem.emitterY = mGameHeight / 2.0f; // playerShip.pivotY + (playerShip.height/1.5); // mGameHeight / 2.0f;
     
     // and animate it a little
 //    SPTween *tween = [SPTween tweenWithTarget:image time:1.5 transition:SP_TRANSITION_EASE_IN_OUT];
@@ -181,7 +171,8 @@ SPTextField *textField;
     // To support the iPad, the minimum "iOS deployment target" is "iOS 3.2".
     
     [self addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
-    [self addEventListener:@selector(onScreenTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+//    [self addEventListener:@selector(onScreenTouched:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [playerShip addEventListener:@selector(onImageDragged:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
 }
 
 - (void)onImageTouched:(SPTouchEvent *)event
@@ -191,6 +182,25 @@ SPTextField *textField;
     {
         [Media playSound:@"sound.caf"];
     }
+}
+
+- (void)onImageDragged:(SPTouchEvent *)event {
+    SPTouch *drag = [[event touchesWithTarget:self andPhase:SPTouchPhaseMoved] anyObject];
+    
+    if (drag) {
+        SPPoint *dragLocation = [drag locationInSpace:self];
+        SPPoint *prevDragLocation = [drag previousLocationInSpace:self];
+        [self moveObjectByX:dragLocation.x-prevDragLocation.x andY:dragLocation.y-prevDragLocation.y];
+    }
+}
+
+- (void)moveObjectByX:(float)x andY:(float)y {
+    int newX = playerShip.x + x; // mParticleSystem.emitterX + x;
+    int newY = playerShip.y + y; // mParticleSystem.emitterY + y;
+    playerShip.x = newX; // mParticleSystem.emitterX = newX;
+    playerShip.y = newY; // mParticleSystem.emitterY = newY;
+    mParticleSystem.emitterX = newX;
+    mParticleSystem.emitterY = (-1 * newY);
 }
 
 - (void)onResize:(SPResizeEvent *)event
@@ -239,20 +249,20 @@ SPTextField *textField;
         }
     }
     
-    if(shouldMove){
-        // player ship bounds checking
-        if(playerShip.x < 40){
-            playerShip.x = 40;
-            atLeftEdgeOfScreen = YES;
-        }else if(playerShip.x > (mGameWidth-40)){
-            playerShip.x = mGameWidth-40;
-            atRightEdgeOfScreen = YES;
-        }else{
-            if(dt != 0){
-                playerShip.x += objXSpeed * accel * dt * dt;
-            }
-        }
-    }
+//    if(shouldMove){
+//        // player ship bounds checking
+//        if(playerShip.x < 40){
+//            playerShip.x = 40;
+//            atLeftEdgeOfScreen = YES;
+//        }else if(playerShip.x > (mGameWidth-40)){
+//            playerShip.x = mGameWidth-40;
+//            atRightEdgeOfScreen = YES;
+//        }else{
+//            if(dt != 0){
+//                playerShip.x += objXSpeed * accel * dt * dt;
+//            }
+//        }
+//    }
     
     // insert newest value
     // will push current values over by 1 spot, extending length by 1
