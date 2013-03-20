@@ -13,6 +13,7 @@
     float mGameWidth;
     float mGameHeight;
     SXParticleSystem *mParticleSystem;
+    SXParticleSystem *mStarField;
 }
 
 - (id)initWithWidth:(float)width height:(float)height;

@@ -62,7 +62,6 @@ SPTextField *textField;
         }
         
         mParticleSystem = [[SXParticleSystem alloc] initWithContentsOfFile:@"rocketthrust.pex"];
-        
         mParticleSystem.emitterX = width / 2.0f;
         mParticleSystem.emitterY = height / 2.0f;
         
@@ -89,47 +88,37 @@ SPTextField *textField;
     
 }
 
-- (void)setup
+
+
+- (void)startupBackground
 {
-    // This is where the code of your game will start. 
-    // In this sample, we add just a few simple elements to get a feeling about how it's done.
+    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield.pex"];
+    mStarField.emitterX = mGameWidth / 2.0f;
+    mStarField.emitterY = mGameHeight / 2.0f;
+//        mStarField.scaleFactor = 2.0;
     
+    [[SPStage mainStage].juggler addObject:mStarField];
+    
+    [self addChild:mStarField];
+    [mStarField start];
+}
+
+- (void)setup
+{    
     [SPAudioEngine start];  // starts up the sound engine
-    
-    
-    // The Application contains a very handy "Media" class which loads your texture atlas
-    // and all available sound files automatically. Extend this class as you need it --
-    // that way, you will be able to access your textures and sounds throughout your 
-    // application, without duplicating any resources.
-    
+        
 //    [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
     [Media initSound];      // loads all your sounds    -> see Media.h/Media.m
     
-    
-    // Create a background image. Since the demo must support all different kinds of orientations,
-    // we center it on the stage with the pivot point.
-    
-//    SPImage *background = [[SPImage alloc] initWithContentsOfFile:@"background.jpg"];
-//    background.pivotX = background.width / 2;
-//    background.pivotY = background.height / 2;
-//    background.x = mGameWidth / 2;
-//    background.y = mGameHeight / 2;
-//    [self addChild:background];
-    
-    SPQuad *background = [[SPQuad alloc] initWithWidth:mGameWidth height:mGameHeight];
-    [background setColor:0x000000];
-    [self addChild:background];
+    [self startupBackground];
     [self addChild:mParticleSystem];
-        
+    
     playerShip = [[SPImage alloc] initWithContentsOfFile:@"ship.jpeg"];
     playerShip.pivotX = (int)playerShip.width / 2;
     playerShip.pivotY = (int)playerShip.height / 2;
     playerShip.x = mGameWidth / 2;
     playerShip.y = mGameHeight / 2;
     [self addChild:playerShip];
-    
-//    mParticleSystem.emitterX = mGameWidth / 2.0f; // playerShip.pivotX; // mGameWidth / 2.0f;
-//    mParticleSystem.emitterY = mGameHeight / 2.0f; // playerShip.pivotY + (playerShip.height/1.5); // mGameHeight / 2.0f;
     
     // and animate it a little
 //    SPTween *tween = [SPTween tweenWithTarget:image time:1.5 transition:SP_TRANSITION_EASE_IN_OUT];
@@ -195,10 +184,10 @@ SPTextField *textField;
 }
 
 - (void)moveObjectByX:(float)x andY:(float)y {
-    int newX = playerShip.x + x; // mParticleSystem.emitterX + x;
-    int newY = playerShip.y + y; // mParticleSystem.emitterY + y;
-    playerShip.x = newX; // mParticleSystem.emitterX = newX;
-    playerShip.y = newY; // mParticleSystem.emitterY = newY;
+    int newX = playerShip.x + x;
+    int newY = playerShip.y + y;
+    playerShip.x = newX;
+    playerShip.y = newY;
     mParticleSystem.emitterX = newX;
     mParticleSystem.emitterY = (-1 * newY);
 }
