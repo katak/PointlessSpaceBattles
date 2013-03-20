@@ -10,6 +10,10 @@
 		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
 		0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */ = {isa = PBXBuildFile; fileRef = 0119E23B16F3FFF80045B3BF /* rocketthrust.pex */; };
 		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
+		01FAD52016F94FBB00EE1305 /* comet.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51C16F94FBB00EE1305 /* comet.pex */; };
+		01FAD52116F94FBB00EE1305 /* firework.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51D16F94FBB00EE1305 /* firework.pex */; };
+		01FAD52216F94FBB00EE1305 /* softexplosion.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51E16F94FBB00EE1305 /* softexplosion.pex */; };
+		01FAD52316F94FBB00EE1305 /* starfield.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51F16F94FBB00EE1305 /* starfield.pex */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -81,6 +85,10 @@
 		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
 		0119E23B16F3FFF80045B3BF /* rocketthrust.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rocketthrust.pex; sourceTree = "<group>"; };
 		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
+		01FAD51C16F94FBB00EE1305 /* comet.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comet.pex; sourceTree = "<group>"; };
+		01FAD51D16F94FBB00EE1305 /* firework.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firework.pex; sourceTree = "<group>"; };
+		01FAD51E16F94FBB00EE1305 /* softexplosion.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = softexplosion.pex; sourceTree = "<group>"; };
+		01FAD51F16F94FBB00EE1305 /* starfield.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = starfield.pex; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -230,6 +238,10 @@
 		DE053A2216F3B7C00034F0E9 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				01FAD51C16F94FBB00EE1305 /* comet.pex */,
+				01FAD51D16F94FBB00EE1305 /* firework.pex */,
+				01FAD51E16F94FBB00EE1305 /* softexplosion.pex */,
+				01FAD51F16F94FBB00EE1305 /* starfield.pex */,
 				0119E23B16F3FFF80045B3BF /* rocketthrust.pex */,
 				DE053A2316F3B7C00034F0E9 /* drugs.pex */,
 				DE053A2416F3B7C00034F0E9 /* fire.pex */,
@@ -432,6 +444,10 @@
 				DE053A2916F3B7C00034F0E9 /* sun.pex in Resources */,
 				DE053A2A16F3B7C00034F0E9 /* waterfall.pex in Resources */,
 				0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */,
+				01FAD52016F94FBB00EE1305 /* comet.pex in Resources */,
+				01FAD52116F94FBB00EE1305 /* firework.pex in Resources */,
+				01FAD52216F94FBB00EE1305 /* softexplosion.pex in Resources */,
+				01FAD52316F94FBB00EE1305 /* starfield.pex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
