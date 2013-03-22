@@ -92,10 +92,11 @@ SPTextField *textField;
 
 - (void)startupBackground
 {
-    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield.pex"];
+    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield_background.pex"];
     mStarField.emitterX = mGameWidth / 2.0f;
-    mStarField.emitterY = mGameHeight / 2.0f;
+    mStarField.emitterY = -20.0f;//mGameHeight / 2.0f;
 //        mStarField.scaleFactor = 2.0;
+    mStarField.scaleY = -1.0;   // stars should scroll downward
     
     [[SPStage mainStage].juggler addObject:mStarField];
     

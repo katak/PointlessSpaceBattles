@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01137E3C16F2BB1300FA320B /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 01137E3B16F2BB1300FA320B /* Ship.m */; };
 		0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */ = {isa = PBXBuildFile; fileRef = 0119E23B16F3FFF80045B3BF /* rocketthrust.pex */; };
+		011A7EE616FD18C1008D7B5A /* starfield_background.pex in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EE516FD18C1008D7B5A /* starfield_background.pex */; };
+		011A7EE916FD2144008D7B5A /* awing.png in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EE816FD2144008D7B5A /* awing.png */; };
 		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
 		01FAD52016F94FBB00EE1305 /* comet.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51C16F94FBB00EE1305 /* comet.pex */; };
 		01FAD52116F94FBB00EE1305 /* firework.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51D16F94FBB00EE1305 /* firework.pex */; };
@@ -84,6 +86,8 @@
 		01137E3A16F2BB1300FA320B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
 		01137E3B16F2BB1300FA320B /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ship.m; sourceTree = "<group>"; };
 		0119E23B16F3FFF80045B3BF /* rocketthrust.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rocketthrust.pex; sourceTree = "<group>"; };
+		011A7EE516FD18C1008D7B5A /* starfield_background.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = starfield_background.pex; sourceTree = "<group>"; };
+		011A7EE816FD2144008D7B5A /* awing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awing.png; sourceTree = "<group>"; };
 		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
 		01FAD51C16F94FBB00EE1305 /* comet.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comet.pex; sourceTree = "<group>"; };
 		01FAD51D16F94FBB00EE1305 /* firework.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firework.pex; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 		DE053A2216F3B7C00034F0E9 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				011A7EE516FD18C1008D7B5A /* starfield_background.pex */,
 				01FAD51C16F94FBB00EE1305 /* comet.pex */,
 				01FAD51D16F94FBB00EE1305 /* firework.pex */,
 				01FAD51E16F94FBB00EE1305 /* softexplosion.pex */,
@@ -317,6 +322,7 @@
 		DE4F80DD14E1541400655D44 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				011A7EE816FD2144008D7B5A /* awing.png */,
 				016BF1FE16F2EB6100C1D38E /* ship.jpeg */,
 				DE4F80DE14E1541400655D44 /* atlas.png */,
 				DE4F80DF14E1541400655D44 /* atlas.xml */,
@@ -448,6 +454,8 @@
 				01FAD52116F94FBB00EE1305 /* firework.pex in Resources */,
 				01FAD52216F94FBB00EE1305 /* softexplosion.pex in Resources */,
 				01FAD52316F94FBB00EE1305 /* starfield.pex in Resources */,
+				011A7EE616FD18C1008D7B5A /* starfield_background.pex in Resources */,
+				011A7EE916FD2144008D7B5A /* awing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
