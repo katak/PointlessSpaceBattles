@@ -238,20 +238,20 @@ SPTextField *textField;
         }
     }
     
-//    if(shouldMove){
-//        // player ship bounds checking
-//        if(playerShip.x < 40){
-//            playerShip.x = 40;
-//            atLeftEdgeOfScreen = YES;
-//        }else if(playerShip.x > (mGameWidth-40)){
-//            playerShip.x = mGameWidth-40;
-//            atRightEdgeOfScreen = YES;
-//        }else{
-//            if(dt != 0){
-//                playerShip.x += objXSpeed * accel * dt * dt;
-//            }
-//        }
-//    }
+    if(shouldMove){
+        // player ship bounds checking
+        if(playerShip.x < 40){
+            playerShip.x = 40;
+            atLeftEdgeOfScreen = YES;
+        }else if(playerShip.x > (mGameWidth-40)){
+            playerShip.x = mGameWidth-40;
+            atRightEdgeOfScreen = YES;
+        }else{
+            if(dt != 0){
+                playerShip.x += objXSpeed * accel * dt * dt;
+            }
+        }
+    }
     
     // insert newest value
     // will push current values over by 1 spot, extending length by 1
