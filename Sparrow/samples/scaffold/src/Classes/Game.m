@@ -111,10 +111,10 @@ SPTextField *textField;
 //    [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
     [Media initSound];      // loads all your sounds    -> see Media.h/Media.m
     
-    [self startupBackground];
+//    [self startupBackground];
     [self addChild:mParticleSystem];
     
-    playerShip = [[SPImage alloc] initWithContentsOfFile:@"ship.jpeg"];
+    playerShip = [[SPImage alloc] initWithContentsOfFile:@"awing.png"];
     playerShip.pivotX = (int)playerShip.width / 2;
     playerShip.pivotY = (int)playerShip.height / 2;
     playerShip.x = mGameWidth / 2;
@@ -250,6 +250,7 @@ SPTextField *textField;
         }else{
             if(dt != 0){
                 playerShip.x += objXSpeed * accel * dt * dt;
+                mParticleSystem.emitterX = playerShip.x;
             }
         }
     }
