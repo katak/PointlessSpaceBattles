@@ -40,6 +40,7 @@ BOOL atLeftEdgeOfScreen = NO;   // flag for player collision with left screen ed
 BOOL atRightEdgeOfScreen = NO;  // flag for player collision with right screen edge
 int frameCount = 0;
 SPTextField *textField;
+NSMutableArray *projectiles;
 
 - (id)initWithWidth:(float)width height:(float)height
 {
@@ -92,7 +93,7 @@ SPTextField *textField;
 
 - (void)startupBackground
 {
-    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield_background.pex"];
+    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield_scrolling.pex"];
     mStarField.emitterX = mGameWidth / 2.0f;
     mStarField.emitterY = -20.0f;//mGameHeight / 2.0f;
 //        mStarField.scaleFactor = 2.0;
@@ -111,7 +112,7 @@ SPTextField *textField;
 //    [Media initAtlas];      // loads your texture atlas -> see Media.h/Media.m
     [Media initSound];      // loads all your sounds    -> see Media.h/Media.m
     
-//    [self startupBackground];
+    [self startupBackground];
     [self addChild:mParticleSystem];
     
     playerShip = [[SPImage alloc] initWithContentsOfFile:@"awing.png"];
@@ -139,7 +140,8 @@ SPTextField *textField;
     textField.color = 0xFFFFFF;
     [self addChild:textField];
     
-
+    projectiles = [[NSMutableArray alloc] init];
+    
     // The scaffold autorotates the game to all supported device orientations. 
     // Choose the orienations you want to support in the Target Settings ("Summary"-tab).
     // To update the game content accordingly, listen to the "RESIZE" event; it is dispatched
@@ -190,7 +192,7 @@ SPTextField *textField;
     playerShip.x = newX;
     playerShip.y = newY;
     mParticleSystem.emitterX = newX;
-    mParticleSystem.emitterY = (-1 * newY);
+    mParticleSystem.emitterY = (-1 * newY) - 32;
 }
 
 - (void)onResize:(SPResizeEvent *)event
@@ -203,6 +205,22 @@ SPTextField *textField;
 {
     frameCount++;
     textField.text = [NSString stringWithFormat:@"Frame: %d",frameCount];
+    
+    // produce a laser every 100 frames
+    if((frameCount % 100)==0) {
+        SPImage *laser = [[SPImage alloc] initWithContentsOfFile:@"green_laser.png"];
+        [projectiles addObject:laser];
+        laser.x = playerShip.x;
+        laser.y = playerShip.y;
+        [self addChild:laser];
+        
+    }
+    
+    // move each projectile up by 10px
+    for (SPImage *projectile in projectiles) {
+        projectile.y -= 25;
+    }
+    
     dt = event.passedTime;
 }
 

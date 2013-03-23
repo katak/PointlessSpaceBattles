@@ -11,6 +11,8 @@
 		0119E23C16F3FFF80045B3BF /* rocketthrust.pex in Resources */ = {isa = PBXBuildFile; fileRef = 0119E23B16F3FFF80045B3BF /* rocketthrust.pex */; };
 		011A7EE616FD18C1008D7B5A /* starfield_background.pex in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EE516FD18C1008D7B5A /* starfield_background.pex */; };
 		011A7EE916FD2144008D7B5A /* awing.png in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EE816FD2144008D7B5A /* awing.png */; };
+		011A7EEB16FD2A16008D7B5A /* starfield_scrolling.pex in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EEA16FD2A16008D7B5A /* starfield_scrolling.pex */; };
+		011A7EED16FD2D13008D7B5A /* green_laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 011A7EEC16FD2D13008D7B5A /* green_laser.png */; };
 		016BF1FF16F2EB6100C1D38E /* ship.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 016BF1FE16F2EB6100C1D38E /* ship.jpeg */; };
 		01FAD52016F94FBB00EE1305 /* comet.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51C16F94FBB00EE1305 /* comet.pex */; };
 		01FAD52116F94FBB00EE1305 /* firework.pex in Resources */ = {isa = PBXBuildFile; fileRef = 01FAD51D16F94FBB00EE1305 /* firework.pex */; };
@@ -88,6 +90,8 @@
 		0119E23B16F3FFF80045B3BF /* rocketthrust.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rocketthrust.pex; sourceTree = "<group>"; };
 		011A7EE516FD18C1008D7B5A /* starfield_background.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = starfield_background.pex; sourceTree = "<group>"; };
 		011A7EE816FD2144008D7B5A /* awing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awing.png; sourceTree = "<group>"; };
+		011A7EEA16FD2A16008D7B5A /* starfield_scrolling.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = starfield_scrolling.pex; sourceTree = "<group>"; };
+		011A7EEC16FD2D13008D7B5A /* green_laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_laser.png; sourceTree = "<group>"; };
 		016BF1FE16F2EB6100C1D38E /* ship.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ship.jpeg; sourceTree = "<group>"; };
 		01FAD51C16F94FBB00EE1305 /* comet.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comet.pex; sourceTree = "<group>"; };
 		01FAD51D16F94FBB00EE1305 /* firework.pex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firework.pex; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		DE053A2216F3B7C00034F0E9 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				011A7EEA16FD2A16008D7B5A /* starfield_scrolling.pex */,
 				011A7EE516FD18C1008D7B5A /* starfield_background.pex */,
 				01FAD51C16F94FBB00EE1305 /* comet.pex */,
 				01FAD51D16F94FBB00EE1305 /* firework.pex */,
@@ -322,6 +327,7 @@
 		DE4F80DD14E1541400655D44 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				011A7EEC16FD2D13008D7B5A /* green_laser.png */,
 				011A7EE816FD2144008D7B5A /* awing.png */,
 				016BF1FE16F2EB6100C1D38E /* ship.jpeg */,
 				DE4F80DE14E1541400655D44 /* atlas.png */,
@@ -456,6 +462,8 @@
 				01FAD52316F94FBB00EE1305 /* starfield.pex in Resources */,
 				011A7EE616FD18C1008D7B5A /* starfield_background.pex in Resources */,
 				011A7EE916FD2144008D7B5A /* awing.png in Resources */,
+				011A7EEB16FD2A16008D7B5A /* starfield_scrolling.pex in Resources */,
+				011A7EED16FD2D13008D7B5A /* green_laser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
