@@ -81,31 +81,6 @@ NSMutableArray *projectiles;
     return self;
 }
 
-- (void)dealloc
-{
-    // release any resources here
-    
-    [Media releaseAtlas];
-    [Media releaseSound];
-    
-}
-
-
-
-- (void)startupBackground
-{
-    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield_scrolling.pex"];
-    mStarField.emitterX = mGameWidth / 2.0f;
-    mStarField.emitterY = -20.0f;//mGameHeight / 2.0f;
-//        mStarField.scaleFactor = 2.0;
-    mStarField.scaleY = -1.0;   // stars should scroll downward
-    
-    [[SPStage mainStage].juggler addObject:mStarField];
-    
-    [self addChild:mStarField];
-    [mStarField start];
-}
-
 - (void)setup
 {    
     [SPAudioEngine start];  // starts up the sound engine
@@ -295,5 +270,28 @@ NSMutableArray *projectiles;
         accel += [raw floatValue];
     }
     accel *= ACCEL_FACTOR / NUM_FILTER_POINTS;
+}
+
+- (void)dealloc
+{
+    // release any resources here
+    
+    [Media releaseAtlas];
+    [Media releaseSound];
+    
+}
+
+- (void)startupBackground
+{
+    mStarField = [[SXParticleSystem alloc] initWithContentsOfFile:@"starfield_scrolling.pex"];
+    mStarField.emitterX = mGameWidth / 2.0f;
+    mStarField.emitterY = -20.0f;//mGameHeight / 2.0f;
+    //        mStarField.scaleFactor = 2.0;
+    mStarField.scaleY = -1.0;   // stars should scroll downward
+    
+    [[SPStage mainStage].juggler addObject:mStarField];
+    
+    [self addChild:mStarField];
+    [mStarField start];
 }
 @end
