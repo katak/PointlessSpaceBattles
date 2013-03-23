@@ -39,6 +39,7 @@ float dt;                       // time elapsed
 BOOL atLeftEdgeOfScreen = NO;   // flag for player collision with left screen edge
 BOOL atRightEdgeOfScreen = NO;  // flag for player collision with right screen edge
 int frameCount = 0;
+int projectileSpeed = 25;
 SPTextField *textField;
 NSMutableArray *projectiles;
 
@@ -207,18 +208,24 @@ NSMutableArray *projectiles;
     textField.text = [NSString stringWithFormat:@"Frame: %d",frameCount];
     
     // produce a laser every 100 frames
-    if((frameCount % 100)==0) {
-        SPImage *laser = [[SPImage alloc] initWithContentsOfFile:@"green_laser.png"];
-        [projectiles addObject:laser];
-        laser.x = playerShip.x;
-        laser.y = playerShip.y;
-        [self addChild:laser];
-        
+    if((frameCount % 20)==0) {
+        SPImage *laserL = [[SPImage alloc] initWithContentsOfFile:@"green_laser.png"];
+        SPImage *laserR = [[SPImage alloc] initWithContentsOfFile:@"green_laser.png"];
+        [projectiles addObject:laserL];
+        [projectiles addObject:laserR];
+        int offset = playerShip.pivotX;
+        laserL.x = playerShip.x - 26;
+        laserL.y = playerShip.y;
+        laserR.x = playerShip.x + 19;
+        laserR.y = playerShip.y;
+        [self addChild:laserL];
+        [self addChild:laserR];
+//        NSLog(@"%g, %g, %d",laserL.x, laserR.x, offset);
     }
     
     // move each projectile up by 10px
     for (SPImage *projectile in projectiles) {
-        projectile.y -= 25;
+        projectile.y -= projectileSpeed;
     }
     
     dt = event.passedTime;
@@ -267,8 +274,8 @@ NSMutableArray *projectiles;
             atRightEdgeOfScreen = YES;
         }else{
             if(dt != 0){
-                playerShip.x += objXSpeed * accel * dt * dt;
-                mParticleSystem.emitterX = playerShip.x;
+//                playerShip.x += objXSpeed * accel * dt * dt;
+//                mParticleSystem.emitterX = playerShip.x;
             }
         }
     }
